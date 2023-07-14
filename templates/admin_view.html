@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+{% block content %} 
+{% for meal in meals %}
+
+<div class="meal-card">
+  <h3>{{ meal.title }}</h3>
+
+  {% if request.user.is_staff %}
+
+  <a class="btn btn-warning" href="{% url 'edit_meal' meal_id=meal.id %}"
+    >Edit Meal</a
+  >
+
+  <form action="{% url 'delete_meal' meal_id=meal.id %}" method="POST">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Delete Meal</button>
+  </form>
+
+  {% endif %}
+</div>
+
+{% empty %}
+
+<p>Sorry, no meals exist</p>
+
+{% endfor %} 
+{% endblock %}

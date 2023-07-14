@@ -12,7 +12,7 @@ def index(request):
 # Admin Panel
 
 @login_required
-def meal_list(request):
+def admin_view(request):
     if not request.user.is_staff:
         messages.error(request, f"Not eligible for this action")
 
@@ -92,4 +92,4 @@ def delete_meal(request, meal_id):
         meal.delete()
         messages.success(request, f"{meal_name} succesfully deleted")
 
-        return redirect(reverse("index"))
+    return redirect(reverse("index"))
