@@ -28,3 +28,7 @@ navbar {
 .jumbotron {
     background-color: rgba(224, 224, 224, 0.795);
 }
+
+form {
+    padding: 3em;
+}
