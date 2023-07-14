@@ -34,6 +34,8 @@ ALLOWED_HOSTS = [
     'recipe-pinner.herokuapp.com', 'localhost'
 ]
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 
 # Application definition
 

@@ -14,3 +14,13 @@ class Meal(models.Model):
 
     def __str__(self):
         return f'{self.title} - {self.preptime_in_minutes} minutes to prep - {self.calories_in_grams} Kcal'
+
+
+# class MealPlan(model.Model):
+
+#     user = models.OneToOneField(User, related_name='meal_plan', on_delete=models.CASCADE, default=1)
+#     meals = models.ManyToManyField(Meal)
+
+#     def __str__(self):
+
+#         return f'{self.user.username} - {self.meals.name}'
