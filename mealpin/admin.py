@@ -1,9 +1,12 @@
 from django.contrib import admin
-from .models import Meal
+from .models import Meal, MyMeals
 from django_summernote.admin import SummernoteModelAdmin
 
 
 @admin.register(Meal)
-class PostAdmin(SummernoteModelAdmin):
+class MealAdmin(SummernoteModelAdmin):
 
     summernote_fields = ('recipe')
+
+
+admin.site.register(MyMeals)

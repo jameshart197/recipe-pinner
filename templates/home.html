@@ -1,0 +1,39 @@
+{% extends "base.html" %} 
+{% block content %} 
+{% for meal in meals %}
+
+
+
+"""
+Page with meals, each with an add button
+
+The add button would navigate to a url (with the meal id) that would add the 
+meal to the logged in user's meals list.
+
+"""
+
+
+<div class="meal-card">
+  <h3>{{ meal.title }}</h3>
+
+      {% if meal not in request.user.mymeals.meals %}
+      <a class="btn btn-warning" href="{% url 'user_pin' meal_id=meal.id %}"
+        >Add to Plan</a>
+
+  {% else %}
+
+  <a
+    class="btn btn-danger"
+    href="{% url 'user_unpin' meal_id=meal.id %}"
+    >Remove from Plan</a>
+
+  {% endif %}
+
+</div>
+
+{% empty %}
+
+<p>Sorry, no meals exist</p>
+
+{% endfor %} 
+{% endblock %}

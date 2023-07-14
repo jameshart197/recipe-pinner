@@ -1,15 +1,25 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Meal
+from .models import Meal, MyMeals
 from .forms import MealForm
 
 
 def index(request):
-    return render(request, "index.html")
+    if request.user.is_authenticated:
+        meal_plan = MyMeals.objects.get_or_create(user=request.user)
+        # if meal_plan is None:
+        #     meal_plan = MyMeals.objects.create(
+        #         user=request.user
+        #     )
+        context = {"meals": Meal.objects.all()}
+        return render(request, "home.html", context)
+    else:
+        return render(request, "index.html")
 
 
 # Admin Panel
+
 
 @login_required
 def admin_view(request):
@@ -17,11 +27,10 @@ def admin_view(request):
         messages.error(request, f"Not eligible for this action")
 
         return redirect(reverse("index"))
-    context = {
-      'meals': Meal.objects.all()
-    }
+    context = {"meals": Meal.objects.all()}
 
-    return render(request, 'admin_view.html', context)
+    return render(request, "admin_view.html", context)
+
 
 # Create Meal
 
@@ -37,7 +46,7 @@ def create_meal(request):
         form = MealForm(request.POST, request.FILES)
 
         if form.is_valid():
-            meal_name = request.POST['title']
+            meal_name = request.POST["title"]
             form.save()
             messages.success(request, f"{meal_name} added to list")
 
@@ -65,7 +74,7 @@ def edit_meal(request, meal_id):
         form = MealForm(request.POST, request.FILES, instance=meal)
 
         if form.is_valid():
-            meal_name = request.POST['title']
+            meal_name = request.POST["title"]
             form.save()
             messages.success(request, f"{meal_name} succesfully edited")
 
@@ -80,7 +89,7 @@ def edit_meal(request, meal_id):
 
 
 @login_required
-def delete_meal(request, meal_id): 
+def delete_meal(request, meal_id):
     if not request.user.is_staff:
         messages.error(request, f"Not eligible for this action")
 
@@ -91,5 +100,31 @@ def delete_meal(request, meal_id):
         meal_name = meal.title
         meal.delete()
         messages.success(request, f"{meal_name} succesfully deleted")
+
+    return redirect(reverse("index"))
+
+# Add
+
+
+@login_required
+def add_meal_to_plan(request, meal_id):
+    meal = get_object_or_404(Meal, id=meal_id)
+    if meal:
+        user_meal_list, created = MyMeals.objects.get_or_create(user=request.user)
+        user_meal_list.meals.add(meal)
+        messages.success(request, f"{meal.title} succesfully added")
+
+    return redirect(reverse("index"))
+
+# Remove
+
+
+@login_required
+def remove_meal_from_plan(request, meal_id):
+    meal = get_object_or_404(Meal, id=meal_id)
+    if meal:
+        user_meal_list, created = MyMeals.objects.get_or_create(user=request.user)
+        user_meal_list.meals.remove(meal)
+        messages.success(request, f"{meal.title} succesfully removed")
 
     return redirect(reverse("index"))
