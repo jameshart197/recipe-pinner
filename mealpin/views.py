@@ -108,23 +108,25 @@ def delete_meal(request, meal_id):
 
 @login_required
 def add_meal_to_plan(request, meal_id):
-    meal = get_object_or_404(Meal, id=meal_id)
-    if meal:
-        user_meal_list, created = MyMeals.objects.get_or_create(user=request.user)
-        user_meal_list.meals.add(meal)
-        messages.success(request, f"{meal.title} succesfully added")
+    if request.method == "POST":
+        meal = get_object_or_404(Meal, id=meal_id)
+        if meal:
+            user_meal_list, created = MyMeals.objects.get_or_create(user=request.user)
+            user_meal_list.meals.add(meal)
+            messages.success(request, f"{meal.title} succesfully added")
 
-    return redirect(reverse("index"))
+        return redirect(reverse("index"))
 
 # Remove
 
 
 @login_required
 def remove_meal_from_plan(request, meal_id):
-    meal = get_object_or_404(Meal, id=meal_id)
-    if meal:
-        user_meal_list, created = MyMeals.objects.get_or_create(user=request.user)
-        user_meal_list.meals.remove(meal)
-        messages.success(request, f"{meal.title} succesfully removed")
+    if request.method == "POST":
+        meal = get_object_or_404(Meal, id=meal_id)
+        if meal:
+            user_meal_list, created = MyMeals.objects.get_or_create(user=request.user)
+            user_meal_list.meals.remove(meal)
+            messages.success(request, f"{meal.title} succesfully removed")
 
-    return redirect(reverse("index"))
+        return redirect(reverse("index"))
