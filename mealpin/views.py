@@ -17,6 +17,15 @@ def index(request):
     else:
         return render(request, "index.html")
 
+# My Meals
+
+
+@login_required
+def my_meals(request):
+    meal_plan = MyMeals.objects.get_or_create(user=request.user)
+    context = {}
+    return render(request, "my_meals.html", context)
+
 
 # Admin Panel
 
@@ -130,3 +139,4 @@ def remove_meal_from_plan(request, meal_id):
             messages.success(request, f"{meal.title} succesfully removed")
 
         return redirect(reverse("index"))
+

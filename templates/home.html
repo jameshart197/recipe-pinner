@@ -5,13 +5,12 @@
 <div class="meal-card">
   <h3>{{ meal.title }}</h3>
 
-  {% if meal not in request.user.mymeals.meals %}
+  {% if meal not in request.user.my_meals.meals.all %}
   <form action="{% url 'user_pin' meal_id=meal.id %}" method="post">
     {% csrf_token %}   
      <button type="submit" name='pin_submit' >Pin</button>
      </form>
-  <!-- <a class="btn btn-warning" href="{% url 'user_pin' meal_id=meal.id %}"
-        >Add to Plan</a> -->
+
 
   {% else %}
 
@@ -19,10 +18,7 @@
     {% csrf_token %}   
      <button type="submit" name='pin_unsubmit' >Unpin</button>
      </form>
-  <!-- <a
-    class="btn btn-danger"
-    href="{% url 'user_unpin' meal_id=meal.id %}"
-    >Remove from Plan</a> -->
+
 
   {% endif %}
 </div>

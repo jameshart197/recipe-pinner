@@ -1,7 +1,17 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% block content %}
 
-<div>
-    <p>Hello</p>
+{% for meal in request.user.my_meals.meals.all %} 
+
+<div class="meal-card">
+  <h3>{{ meal.title }}</h3>
+
 </div>
+
+{% empty %}
+
+<p>Sorry, no meals exist</p>
+
+{% endfor %} 
 
 {% endblock %}
