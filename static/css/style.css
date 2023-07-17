@@ -1,3 +1,9 @@
+/* Header */
+
+header {
+    border-bottom: solid #fbf5cd;
+}
+
 navbar {
     height: 10vh;
 }
@@ -6,12 +12,16 @@ navbar {
     filter: invert(1);
 }
 
+/* Footer */
+
 .footer-copyright {
     padding-top: 1em;
     text-align: center;
     text-transform: uppercase;
     font-size: 0.7em;
 }
+
+/* Index Page (Signed Out) */
 
 .hero-image {
     min-width: 100vw;
@@ -29,29 +39,46 @@ navbar {
     background-color: rgba(224, 224, 224, 0.795);
 }
 
+/* General Form Padding (for sign-up, sign-in and admin forms */
 form {
     padding: 3em;
 }
 
-/* Home */
+/* General Settings */
 
 .dark-background {
-    background-color: rgb(32, 32, 32);
+    background-color: #212529;
     min-height: 90vh;
 }
+
+.light-background {
+    background-color: whitesmoke;
+    min-height: 90vh;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.invisible {
+    visibility: hidden !important;
+}
+
+/* Meal Cards */
 
 .meal-card-container {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
-.user-meal-card {
+.card {
     border: solid slategrey;
-    width: 220px;
-    height: 220px;
+    width: 17em;
+    height: 17em;
     margin: 1em;
+    background-color: #fbf5cd;
 }
 
 .card-body {
@@ -59,7 +86,8 @@ form {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    margin: 0 auto;
+    margin: 0;
+    position: relative;
 }
 
 .card-body > form {
@@ -70,7 +98,9 @@ form {
     padding: 1em;
 }
 
-.admin-meal-card {
-    border: solid slategrey;
-    margin: 1em;
+.info-button {
+    position: absolute;
+    right: 0.3em;
+    top: 0.3em;
+    font-size: 150%;
 }

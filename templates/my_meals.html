@@ -1,11 +1,17 @@
 {% extends "base.html" %} 
 {% block content %}
-
+<div class="dark-background">
+  <div class="meal-card-container p-4">
 {% for meal in request.user.my_meals.meals.all %} 
 
-<div class="meal-card">
-  <h3>{{ meal.title }}</h3>
-
+<div class="meal-card card user-meal-card">
+  <div class="card-body">
+    <i class="fa-solid fa-circle-info info-button"></i>
+    <h5 class="card-title">{{ meal.title }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Preparation time: {{ meal.preptime_in_minutes }} minutes</h6>
+    <p class="card-text">{{ meal.calories_in_grams }} Kcal</p>
+    </form>
+  </div>
 </div>
 
 {% empty %}
@@ -13,5 +19,6 @@
 <p>Sorry, no meals exist</p>
 
 {% endfor %} 
-
+  </div>
+</div>
 {% endblock %}
