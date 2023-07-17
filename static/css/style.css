@@ -1,7 +1,7 @@
 /* Header */
 
 header {
-    border-bottom: solid #fbf5cd;
+    border-bottom: solid #f5d400;
 }
 
 navbar {
@@ -67,17 +67,13 @@ form {
 /* Meal Cards */
 
 .meal-card-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
+    display: grid;
+    gap: 1.5em;
+    grid-template-columns: repeat(auto-fill, 17em);
 }
 
 .card {
-    border: solid slategrey;
-    width: 17em;
-    height: 17em;
-    margin: 1em;
+    filter: drop-shadow(5px 5px .5rem rgba(246, 250, 214, 0.5));
     background-color: #fbf5cd;
 }
 
@@ -86,12 +82,30 @@ form {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    margin: 0;
     position: relative;
+    padding: .5em;
+}
+
+.card-body > * {
+    padding: .8em;
+}
+
+.card-title {
+    margin-top: 1.5em;
+}
+
+.card-subtitle {
+    white-space: nowrap;
 }
 
 .card-body > form {
     padding: 0;
+}
+
+.pinbutton {
+    position: absolute;
+    right: 0.3em;
+    top: 0.3em;
 }
 
 .meal-create-button {
@@ -100,7 +114,16 @@ form {
 
 .info-button {
     position: absolute;
+    padding: 0;
     right: 0.3em;
-    top: 0.3em;
+    bottom: 0.3em;
     font-size: 150%;
+}
+
+/* messages */
+
+#msg {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
 }

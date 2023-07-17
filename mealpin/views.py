@@ -139,4 +139,3 @@ def remove_meal_from_plan(request, meal_id):
             messages.success(request, f"{meal.title} succesfully removed")
 
         return redirect(reverse("index"))
-

@@ -12,14 +12,14 @@
         {% if meal not in request.user.my_meals.meals.all %}
         <form action="{% url 'user_pin' meal_id=meal.id %}" method="post">
           {% csrf_token %}
-          <button class="btn btn-outline-dark" type="submit" name="pin_submit">Pin</button>
+          <button class="btn btn-outline-dark pinbutton" type="submit" name="pin_submit"><i class="fa-solid fa-thumbtack"></i></button>
         </form>
 
         {% else %}
 
         <form action="{% url 'user_unpin' meal_id=meal.id %}" method="post">
           {% csrf_token %}
-          <button class="btn btn-dark" type="submit" name="pin_unsubmit">Unpin</button>
+          <button class="btn btn-dark pinbutton" type="submit" name="pin_unsubmit"><i class="fa-solid fa-thumbtack"></i></button>
         </form>
 
         {% endif %}
