@@ -122,7 +122,7 @@ def add_meal_to_plan(request, meal_id):
         if meal:
             user_meal_list, created = MyMeals.objects.get_or_create(user=request.user)
             user_meal_list.meals.add(meal)
-            messages.success(request, f"{meal.title} succesfully added")
+            messages.success(request, f"{meal.title} pinned to My Meals")
 
         return redirect(reverse("index"))
 
@@ -136,6 +136,6 @@ def remove_meal_from_plan(request, meal_id):
         if meal:
             user_meal_list, created = MyMeals.objects.get_or_create(user=request.user)
             user_meal_list.meals.remove(meal)
-            messages.success(request, f"{meal.title} succesfully removed")
+            messages.success(request, f"{meal.title} unpinned from My Meals")
 
         return redirect(reverse("index"))

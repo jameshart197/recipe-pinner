@@ -68,12 +68,12 @@ form {
 
 .meal-card-container {
     display: grid;
-    gap: 1.5em;
+    gap: 2em;
     grid-template-columns: repeat(auto-fill, 17em);
 }
 
 .card {
-    filter: drop-shadow(5px 5px .5rem rgba(246, 250, 214, 0.5));
+    filter: drop-shadow(5px 5px 0.3rem rgba(246, 250, 214, 0.7));
     background-color: #fbf5cd;
 }
 
