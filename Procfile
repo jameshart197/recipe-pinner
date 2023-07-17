@@ -1,1 +1,1 @@
-web: gunicorn recipe-pinner.wsgi
+web: gunicorn recipepinner.wsgi
