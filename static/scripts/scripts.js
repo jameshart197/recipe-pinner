@@ -1,4 +1,4 @@
-let openInfoButtons = document.getElementsByClassName("open-info-button");
+let openInfoButtons = document.getElementsByClassName("info-button");
 const dialogContent = document.getElementsByTagName("dialog")[0];
 
 function closeButton() {

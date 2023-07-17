@@ -24,6 +24,15 @@
       <!-- Content Goes here -->
       {% endblock content %}
     </main>
+    <dialog>
+      <section>
+        <span>Meal Info</span>
+        <i class="fa-solid fa-circle-xmark" onclick="closeButton()"></i>
+      </section>
+      <article>
+        <!-- Javascript injection of dialogue content -->
+      </article>
+    </dialog>
     {% for message in messages %}
     <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
         {{ message | safe }}

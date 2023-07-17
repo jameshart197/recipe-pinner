@@ -94,6 +94,12 @@ form {
     padding: .8em;
 }
 
+.admin-button {
+    padding: .1em;
+    min-width: 7em;
+    margin-top: 3px;
+}
+
 .card-title {
     margin-top: 1.5em;
 }

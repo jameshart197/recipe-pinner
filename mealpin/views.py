@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from .models import Meal, MyMeals
 from .forms import MealForm
 
+# create meal list
+
 
 def index(request):
     if request.user.is_authenticated:
@@ -12,7 +14,7 @@ def index(request):
         #     meal_plan = MyMeals.objects.create(
         #         user=request.user
         #     )
-        context = {"meals": Meal.objects.all()}
+        context = {"meals": request.user.my_meals.meals.all()|Meal.objects.all()}
         return render(request, "home.html", context)
     else:
         return render(request, "index.html")

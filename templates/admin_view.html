@@ -11,7 +11,7 @@
 
     <div class="meal-card card admin-meal-card">
       <div class="card-body">
-        <i class="fa-solid fa-circle-info info-button"></i>
+        <i class="fa-solid fa-circle-info info-button" data-meal="{{ meal.id }}"></i>
         <h5 class="card-title">{{ meal.title }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">
           Preparation time: {{ meal.preptime_in_minutes }} minutes
@@ -19,13 +19,13 @@
         <p class="card-text">{{ meal.calories_in_grams }} Kcal</p>
         {% if request.user.is_staff %}
 
-        <a class="btn btn-warning" href="{% url 'edit_meal' meal_id=meal.id %}"
+        <a class="btn btn-warning admin-button" href="{% url 'edit_meal' meal_id=meal.id %}"
           >Edit Meal</a
         >
 
         <form action="{% url 'delete_meal' meal_id=meal.id %}" method="POST">
           {% csrf_token %}
-          <button class="btn btn-danger" type="submit">Delete Meal</button>
+          <button class="btn btn-danger admin-button" type="submit">Delete Meal</button>
         </form>
 
         {% endif %}
