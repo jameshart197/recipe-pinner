@@ -1,0 +1,11 @@
+    This is a test for when we have a dialog.
+    <h3>{{ meal.title }} </h3>
+    <h4 class="mb-2 text-muted">{{ meal.get_meal_type_display }}</h4>
+    <ul>
+      <li>{{ meal.preptime_in_minutes }} minutes </li>
+      <li>calories: {{ meal.calories_in_grams }} Kcal</li>
+      <li>protein: {{ meal.protein_in_grams }} grams</li>
+      <li>fat: {{ meal.fat_in_grams }} grams</li>
+      <li>carbs: {{ meal.carbs_in_grams }} grams</li>
+      <li>recipe: {{ meal.recipe }}</li>
+    </ul>

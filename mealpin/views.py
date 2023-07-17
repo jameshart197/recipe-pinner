@@ -139,3 +139,10 @@ def remove_meal_from_plan(request, meal_id):
             messages.success(request, f"{meal.title} unpinned from My Meals")
 
         return redirect(reverse("index"))
+
+# Information-Dialogue-Box
+
+
+def info_dialog(request, meal_id):
+    meal = get_object_or_404(Meal, id=meal_id)
+    return render(request, "info_dialog.html", {"meal": meal})

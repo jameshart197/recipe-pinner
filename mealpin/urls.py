@@ -10,4 +10,5 @@ urlpatterns = [
     path('delete/<int:meal_id>', views.delete_meal, name='delete_meal'),
     path('pin/<int:meal_id>', views.add_meal_to_plan, name='user_pin'),
     path('unpin/<int:meal_id>', views.remove_meal_from_plan, name='user_unpin'),
+    path('info/dialog/<int:meal_id>', views.info_dialog, name='info_dialog'),
 ]
