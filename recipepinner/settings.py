@@ -32,7 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-jameshart19-recipepinne-3dno4iv9w1h.ws-eu101.gitpod.io',
-    'recipe-pinner.herokuapp.com', 'localhost'
+    'recipe-pinner.herokuapp.com', 'localhost', 'recipe-pinner-fe5a291f89dd.herokuapp.com'
 ]
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
