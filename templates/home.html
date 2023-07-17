@@ -5,7 +5,7 @@
 
     <div class="meal-card card user-meal-card">
       <div class="card-body">
-        <i class="fa-solid fa-circle-info info-button open-info-button"></i>
+        <i class="fa-solid fa-circle-info info-button open-info-button" data-meal="{{ meal.id }}"></i>
         <h5 class="card-title">{{ meal.title }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">
           Preparation time: {{ meal.preptime_in_minutes }} minutes
@@ -25,7 +25,7 @@
 
         {% else %}
 
-        <form action="{% url 'user_unpin' meal_id=meal.id %}" method="post">
+        <form action="{% url 'user_unpin' meal_id=meal.id %}?redirect=index" method="post">
           {% csrf_token %}
           <button
             class="btn btn-dark pinbutton"
@@ -47,8 +47,8 @@
   </div>
   <dialog>
     <section>
-      <span>Extended Meal Information</span>
-      <button><i class="fa-regular fa-circle xmark"></i></button>
+      <span>Meal Info</span>
+      <i class="fa-solid fa-circle-xmark" onclick="closeButton()"></i>
     </section>
     <article>
       <!-- Javascript injection of dialogue content -->

@@ -64,6 +64,10 @@ form {
     visibility: hidden !important;
 }
 
+.unaligned {
+    text-align: initial;
+}
+
 /* Meal Cards */
 
 .meal-card-container {
@@ -126,4 +130,38 @@ form {
     position: absolute;
     bottom: 1em;
     right: 1em;
+}
+
+/* info-dialog */
+
+dialog {
+    text-align: center;
+    padding: 0;
+}
+
+dialog section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 0.5em;
+    margin-bottom: .8em;
+}
+
+dialog section i {
+    font-size: 150%;
+}
+
+dialog article > ul {
+    list-style: none;
+    padding: 1em;
+}
+
+dialog li {
+    padding: .2em 0;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
 }

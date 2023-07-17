@@ -12,7 +12,6 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/461833c73e.js" crossorigin="anonymous"></script>
-    <script src="{% static 'scripts/scripts.js' %}"></script>
     <title>Recipe Pinner</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
   </head>
@@ -31,7 +30,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     {% endfor %}
-
+    <script src="{% static 'scripts/scripts.js' %}"></script>
     <footer>
         {% include 'includes/footer.html' %}
     </footer>
