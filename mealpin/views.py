@@ -10,11 +10,7 @@ from .forms import MealForm
 def index(request):
     if request.user.is_authenticated:
         meal_plan = MyMeals.objects.get_or_create(user=request.user)
-        # if meal_plan is None:
-        #     meal_plan = MyMeals.objects.create(
-        #         user=request.user
-        #     )
-        context = {"meals": request.user.my_meals.meals.all()|Meal.objects.all()}
+        context = {"meals": Meal.objects.all()}
         return render(request, "home.html", context)
     else:
         return render(request, "index.html")
