@@ -1,30 +1,35 @@
-{% extends "base.html" %} 
-{% block content %} 
-{% for meal in meals %} 
+{% extends "base.html" %} {% block content %}
+<div class="dark-background">
+  <div class="meal-card-container p-4">
+  {% for meal in meals %}
 
-<div class="meal-card">
-  <h3>{{ meal.title }}</h3>
+    <div class="meal-card card user-meal-card">
+      <div class="card-body">
+        <h5 class="card-title">{{ meal.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Preparation time: {{ meal.preptime_in_minutes }} minutes</h6>
+        <p class="card-text">{{ meal.calories_in_grams }} Kcal</p>
+        {% if meal not in request.user.my_meals.meals.all %}
+        <form action="{% url 'user_pin' meal_id=meal.id %}" method="post">
+          {% csrf_token %}
+          <button class="btn btn-outline-secondary" type="submit" name="pin_submit">Pin</button>
+        </form>
 
-  {% if meal not in request.user.my_meals.meals.all %}
-  <form action="{% url 'user_pin' meal_id=meal.id %}" method="post">
-    {% csrf_token %}   
-     <button type="submit" name='pin_submit' >Pin</button>
-     </form>
+        {% else %}
 
+        <form action="{% url 'user_unpin' meal_id=meal.id %}" method="post">
+          {% csrf_token %}
+          <button class="btn btn-secondary" type="submit" name="pin_unsubmit">Unpin</button>
+        </form>
 
-  {% else %}
-
-  <form action="{% url 'user_unpin' meal_id=meal.id %}" method="post">
-    {% csrf_token %}   
-     <button type="submit" name='pin_unsubmit' >Unpin</button>
-     </form>
-
-
-  {% endif %}
+        {% endif %}
+      </div>
+    </div>
+    
+    {% empty %}
+    
+    <p>Sorry, no meals exist</p>
+    
+    {% endfor %}
+  </div>
 </div>
-
-{% empty %}
-
-<p>Sorry, no meals exist</p>
-
-{% endfor %} {% endblock %}
+{% endblock %}
