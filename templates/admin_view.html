@@ -1,27 +1,41 @@
 {% extends "base.html" %} 
-{% block content %} 
-{% for meal in meals %}
+{% block content %}
 
-<div class="meal-card">
-  <h3>{{ meal.title }}</h3>
+<div class="dark-background">
+  <div class="meal-create-button">
+    <a class="btn btn-primary btn-lg" href="{% url 'create_meal' %}"
+          >Add Meal</a>
+  </div>
+  <div class="meal-card-container p-4">
+    {% for meal in meals %}
 
-  {% if request.user.is_staff %}
+    <div class="meal-card card admin-meal-card">
+      <div class="card-body">
+        <h5 class="card-title">{{ meal.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          Preparation time: {{ meal.preptime_in_minutes }} minutes
+        </h6>
+        <p class="card-text">{{ meal.calories_in_grams }} Kcal</p>
+        {% if request.user.is_staff %}
 
-  <a class="btn btn-warning" href="{% url 'edit_meal' meal_id=meal.id %}"
-    >Edit Meal</a
-  >
+        <a class="btn btn-warning" href="{% url 'edit_meal' meal_id=meal.id %}"
+          >Edit Meal</a
+        >
 
-  <form action="{% url 'delete_meal' meal_id=meal.id %}" method="POST">
-    {% csrf_token %}
-    <button class="btn btn-danger" type="submit">Delete Meal</button>
-  </form>
+        <form action="{% url 'delete_meal' meal_id=meal.id %}" method="POST">
+          {% csrf_token %}
+          <button class="btn btn-danger" type="submit">Delete Meal</button>
+        </form>
 
-  {% endif %}
+        {% endif %}
+      </div>
+    </div>
+
+    {% empty %}
+
+    <p>Sorry, no meals exist</p>
+
+    {% endfor %}
+  </div>
 </div>
-
-{% empty %}
-
-<p>Sorry, no meals exist</p>
-
-{% endfor %} 
 {% endblock %}

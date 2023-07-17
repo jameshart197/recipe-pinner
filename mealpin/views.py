@@ -49,7 +49,7 @@ def create_meal(request):
     if not request.user.is_staff:
         messages.error(request, f"Not eligible for this action")
 
-        return redirect(reverse("index"))
+        return redirect(reverse("admin_panel"))
 
     if request.method == "POST":
         form = MealForm(request.POST, request.FILES)
@@ -62,7 +62,7 @@ def create_meal(request):
         else:
             messages.error(request, f"No Meal added to the list")
 
-        return redirect(reverse("index"))
+        return redirect(reverse("admin_panel"))
     form = MealForm()
     return render(request, "create_meal.html", {"form": form})
 
@@ -87,7 +87,7 @@ def edit_meal(request, meal_id):
             form.save()
             messages.success(request, f"{meal_name} succesfully edited")
 
-        return redirect(reverse("index"))
+        return redirect(reverse("admin_panel"))
 
     form = MealForm(instance=meal)
 
@@ -110,7 +110,7 @@ def delete_meal(request, meal_id):
         meal.delete()
         messages.success(request, f"{meal_name} succesfully deleted")
 
-    return redirect(reverse("index"))
+    return redirect(reverse("admin_panel"))
 
 # Add
 
