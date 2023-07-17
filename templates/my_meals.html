@@ -10,6 +10,15 @@
     <h5 class="card-title">{{ meal.title }}</h5>
     <h6 class="card-subtitle mb-2 text-muted">Preparation time: {{ meal.preptime_in_minutes }} minutes</h6>
     <p class="card-text">{{ meal.calories_in_grams }} Kcal</p>
+    <form action="{% url 'user_unpin' meal_id=meal.id %}?redirect=my_meals" method="post">
+      {% csrf_token %}
+      <button
+        class="btn btn-dark pinbutton"
+        type="submit"
+        name="pin_unsubmit"
+      >
+        <i class="fa-solid fa-thumbtack"></i>
+      </button>
     </form>
   </div>
 </div>

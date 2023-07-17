@@ -138,7 +138,8 @@ def remove_meal_from_plan(request, meal_id):
             user_meal_list.meals.remove(meal)
             messages.success(request, f"{meal.title} unpinned from My Meals")
 
-        return redirect(reverse("index"))
+        # return redirect(reverse("index"))
+        return redirect(reverse(request.GET.get("redirect")))
 
 # Information-Dialogue-Box
 
