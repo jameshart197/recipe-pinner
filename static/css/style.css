@@ -68,6 +68,19 @@ form {
     text-align: initial;
 }
 
+.white-text {
+    color: whitesmoke;
+}
+
+button > a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: rgb(0, 0, 0);
+}
+
 /* Meal Cards */
 
 .meal-card-container {
@@ -170,4 +183,23 @@ dialog li {
 
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Login/Signup/Signout forms */
+
+.form-container {
+    margin: 0;
+    max-width: 100%;
+}
+
+.form-container a {
+    color: aqua;
+}
+
+.form-container a:hover {
+    color: rgb(5, 245, 37);
+}
+
+.form-container h3 {
+    padding: 1em;
 }
