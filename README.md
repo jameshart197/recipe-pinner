@@ -1,108 +1,416 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# AppName
 
-Welcome james hart,
+Application is a web app designed for ...
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Unregistered users can ... Users can sign up for the site from the registration form.. 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+Registered users can ... Expand on features...Expand on features...
 
-## Gitpod Reminders
+These things... are controlled from the admin panel, restricting who can create, update and delete ... from the site. The admin user can also...
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+![MealPin](responsive link)
 
-A blue button should appear to click: _Make Public_,
+The live site can be found here: [Site](sitelink)
 
-Another blue button should appear to click: _Open Browser_.
+# Table of Contents
+- [User Experience]
+- [Features]
+  - [Feature1]
+  - [Feature2]
+- [Design]
+- [Technologies Used]
+- [Testing]
+- [Deployment]
+- [Credits]
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+# User Experience
 
-A blue button should appear to click: _Make Public_,
+### User Stories
 
-Another blue button should appear to click: _Open Browser_.
+The user stories used as part of the planning for the website have been consolidated here.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- As a site user I can ... so that ...
+- As a site user I can ... so that ...
+- As a site user I can ... so that ...
+- As a site user I can ... so that ...
+- As a site user I can ... so that ...
+- As a site user I can ... so that ...
+- As a site user I can ... so that ...
+- As a site user I can ... so that ...
+- As a site admin I can ... so that ...
+- As a site admin I can ... so that ...
+- As a site admin I can ... so that ...
 
-To log into the Heroku toolbelt CLI:
+# Features
+## General
+### Navigation Bar
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+<details>
+<summary>Navbar</summary>
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![Navbar]
+</details>
 
-------
+The navigation bar is featured across all pages.
 
-## Release History
+For unregistered or logged out users of the site, the navbar displays... On large screens, the links are visible on the right hand side of the navbar. The list collapses into a dropdown menu on smaller screens which can be toggled by clicking the bars icon.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+For registered users of the site, the navbar displays... 
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+The navbar is...(sourced from Bootstrap)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+On the left hand side of the screen, there is the logo which acts as a link to the index page. 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+### Footer
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+<details>
+<summary>Footer</summary>
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+![Footer]
+</details>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+The footer is featured across all pages.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+The footer features...
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Index Page
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+<details>
+<summary>Index Page Unregistered</summary>
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![Index Page]
+</details>
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+<details>
+<summary>Index Page Logged In</summary>
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+![Index Page]
+</details>
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+The index page has two states depending on the user.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+For unregistered or logged out users, the index page displays...
 
-------
+For users who are registered and logged in, the index page displays...
 
-## FAQ about the uptime script
+The index page is responsive in that....
 
-**Why have you added this script?**
+### Feature2
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+<details>
+<summary>Feature2</summary>
 
-**How will this affect me?**
+![Feature2]
+</details>
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+The Feature2 page is available for... registered/unregistered
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+The primary purpose of feature2 page...
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+Feature2 page is responsive in that...
 
-**So….?**
+### Feature3
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+<details>
+<summary>Feature3</summary>
 
-**Can I opt out?**
+![Feature3]
+</details>
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+The Feature3 page is available for... registered/unregistered
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+The primary purpose of Feature3 page...
 
-**Anything more?**
+Feature3 page is responsive in that...
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+## Accounts
 
----
+### Registration Page
 
-Happy coding!
+<details>
+<summary>Registration Page</summary>
+
+![Registration]
+</details>
+
+The registration page is accessible through a "Sign Up" link in the navbar or "Register" CTA button on the index page for users who are not logged in. The page features a simple form that requires the users "Email", "First Name", "Last Name", "Password" and "Confirm Password". 
+
+If the user attempts to register while leaving any of the fields blank, they are prompted to fill in the missing field. If the user attempts to register with an email that is already registered, they are given a message that the email is already in use. If the user attempts to register without the passwords matching, they are given a message that the password fields don't match. 
+
+When the user registers, they are logged in and redirected to the index page where they are informed their account is awaiting approval.
+
+### Login Page
+
+<details>
+<summary>Login Page</summary>
+
+![Login]
+</details>
+
+The login page is accessible through a "Sign In" link in the navbar. The page features a simple form that requires the user's "Email" and "Password". If the user attempts to submit an empty field, they are prompted to fill in the required field. If the user's credentials are invalid, they are given a message that their login is invalid.
+
+When the user logs in, they are redirected to...
+
+![Logout]
+</details>
+
+The logout option is accessible through a "Logout" link in the navbar. When the user logs out, they are redirected to...
+
+
+## Admin Panel
+
+### Admin Panel
+
+<details>
+<summary>Admin Panel</summary>
+
+![Admin Panel]
+</details>
+
+From the admin panel, the admin user is able to create, update and delete...This is done through...
+
+
+## Future Features
+1. __Stretch One__. This is a description of a stretch goal that provides a new feature
+2. __Stretch Two__. This is a description of a stretch goal that provides a new feature
+3. __Stretch Three__. This is a description of a stretch goal that provides a new feature
+
+
+# Design
+
+The concept for ApplicationName was a site for... As such, the aim of the design ...
+
+
+## CRUD Functionality
+
+This describes CRUD functionality for all users that have it.
+
+
+## Colour
+![Colour Palette]
+
+Clarity, Accessibility, Aesthetic
+
+
+## Typography
+
+Font Choices detailed here and why
+
+
+## Wireframes
+
+Wireframes were created in Balsamiq. They were used for initial planning of template layouts.
+
+<details>
+<summary>Index Wireframe</summary>
+
+![Index Wireframe]()
+</details>
+
+<details>
+<summary>Feature1 Wireframe</summary>
+
+![Feature1 Wireframe]()
+</details>
+
+<details>
+<summary>Feature2 Wireframe</summary>
+
+![Feature2 Wireframe]()
+</details>
+
+<details>
+<summary>Register Wireframe</summary>
+
+![Register Wireframe]()
+</details>
+
+<details>
+<summary>Login Wireframe</summary>
+
+![Login Wireframe]()
+</details>
+
+<details>
+<summary>Admin Panel Wireframe</summary>
+
+![Admin Panel Wireframe]()
+</details>
+
+
+## Agile Methodology
+
+[GitHub Projects Page]()
+
+GitHub Projects was used in part for the planning of this website to create and track User Stories as they were implemented and fulfilled. This section documents sprints and implementation of the plan
+
+
+## Entity Relationship Diagram
+
+The below Entity Relationship Diagram was created on [diagrams.net](https://www.diagrams.net/). It illustrates the relationships between the models present in the project: 
+
+<details>
+<summary>ERD</summary>
+
+![ERD]()
+</details>
+
+
+# Technologies Used
+
+- [HTML5](https://en.wikipedia.org/wiki/HTML5): mark-up language.
+- [CSS3](https://en.wikipedia.org/wiki/CSS): styling.
+- [JavaScript](https://www.javascript.com/): programming language.
+- [Python 3](https://www.python.org/): programming language.
+- [Django 3.2](https://www.djangoproject.com/)
+  - [Django Crispy Forms](https://pypi.org/project/django-crispy-forms/): for forms.
+  - [Crispy Bootstrap5](https://pypi.org/project/crispy-bootstrap5/): bootstrap5 template pack for crispy forms.
+- [Bootstrap](https://getbootstrap.com/): styling.
+- [Cloudinary](https://cloudinary.com/): store static and media files.
+- [GIT](https://git-scm.com/): for version control.
+- [GitHub](https://github.com/): for host repository.
+- [Gitpod](https://www.gitpod.io/): online IDE.
+- [Heroku](https://)
+- [Google Fonts](https://fonts.google.com/): to import fonts.
+- [Font Awesome](https://fontawesome.com/): to import icons.
+- [Balsamiq](https://balsamiq.com/): to create wireframes.
+- [Diagrams.net](https://www.diagrams.net/): for Entity Relationship Diagram.
+
+# Testing
+
+Testing for the site can be found at the below link:
+
+[Link to TESTING.md](TESTING.md)
+
+
+# Deployment
+## Steps to deploy site using Heroku:
+- Assuming gunicorn, dj_database_url, psycopg2 and dj3-cloudinary-storage have been installed
+- On the Heroku dashboard, select "New" and click "Create new app"
+  - Create a unique app name - this will be added to allowed hosts in the project settings
+  - Select your region
+  - Click "Create app"
+- Go to the Resources tab:
+  - Search for "postgres" in the add-ons search bar and select "Heroku Postgres"
+  - Click "Submit Order Form"
+- Go to the settings tab:
+  - Scroll down to the config vars section and select "Reveal Config Vars"
+  - DATABASE_URL will be set after adding Heroku Postgres - this will be copied to the project
+  - Add a new config var for SECRET_KEY - create your own or use a django secret key generator
+  - Add a new config var for CLOUDINARY_URL - copy the "API Environment variable" from your cloudinary dashboard, remove "CLOUDINARY_URL="
+  - Add a new config var for DISABLE_COLLECTSTATIC, with the value 1 - this will be removed before deployment
+- In your project, for your environment variables:
+  - Create a new env.py file in the top level directory
+  - In env.py:
+    - Import os
+    - Add 'os.environ["DATABASE_URL"] = "Paste the DATABASE_URL from the Heroku app here"'
+    - Add 'os.environ["SECRET_KEY"] = "Paste your new secret key here"'
+    - Add 'os.environ["CLOUDINARY_URL"] = "Paste your CLOUDINARY_URL as in the Heroku app here"'
+  ```
+  import os
+
+  os.environ['DATABASE_URL'] = 'postgres://exampledatabaseurl'
+  os.environ['SECRET_KEY'] = 'examplesecretkey'
+  os.environ['CLOUDINARY_URL'] = 'cloudinary://examplecloudinaryurl'
+  ```
+  - If not already present, create a .gitignore file and add env.py to it
+
+- In your project, in settings.py:
+  - Import os
+  - Import dj_database_url
+  - if os.path.isfile('env.py'):
+	import env
+  ```
+  import os
+  import dj_database_url
+  if os.path.isfile('env.py'):
+      import env
+  ```
+  - Replace the insecure secret key with "SECRET_KEY = os.environ.get('SECRET_KEY')"
+  ```
+  SECRET_KEY = os.environ.get('SECRET_KEY')
+  ```
+  - Link new database by commenting out old DATABASES section and adding:
+	DATABASES = {
+			'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+			}
+  ```
+  DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+  ```
+  - Add Heroku to the allowed hosts: "ALLOWED_HOSTS = ['the_app_name_from_heroku.herokuapp.com']
+  ```
+  ALLOWED_HOSTS = ['example-heroku-app-name.herokuapp.com', 'localhost']
+  ```
+  - Add 'cloudinary_storage' (above 'django.contrib.staticfiles') and 'cloudinary' (below) to INSTALLED_APPS
+  ```
+  ...
+  'cloudinary_storage',
+  'django.contrib.staticfiles',
+  'cloudinary',
+  ...
+  ```
+  - Setup Cloudinary to store static and media files
+  ```
+    STATIC_URL = '/static/'
+	STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+	STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+	STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+	MEDIA_URL = '/media/'
+	DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+  ```
+  - Run 'python3 manage.py collectstatic' to collect static files
+- In your project:
+  - Create a Procfile in the top level directory and add 'web: gunicorn project_name.wsgi' to tell 
+  ```
+  web: gunicorn project_name.wsgi
+  ```
+  - Create a requirements file with 'pip3 freeze --local > requirements.txt' for Heroku to install required packages
+  ```
+  pip3 freeze --local > requirements.txt
+  ```
+  - Make migrations with 'python3 manage.py migrate'
+  ```
+  python3 manage.py migrate
+  ```
+  - Commit and push to GitHub
+- Prior to final deployment:
+  - Set DEBUG = False in project settings.py
+  - Remove DISABLE_COLLECTSTATIC config var from Heroku
+- Go to the Deploy tab:
+  - Select GitHub and confirm connection to GitHub account
+  - Search for the repository and click "Connect"
+  - Scroll down to the deploy options
+  - Select automatic deploys if you would like automatic deployment with each new push to the GitHub repository
+  - In manual deploy, select which branch to deploy and click "Deploy Branch"
+  - Heroku will start building the app
+- The link to the app can be found at the top of the page by clicking "Open app"
+
+The live site can be found here: [Application]()
+
+
+## Steps to clone site:
+- In the GitHub repository, click the "Code" button.
+- Select "HTTPS" and copy the URL.
+- Open Git Bash and navigate to the repository where you would like to locate the cloned repository.
+- Type "git clone" followed by the copied URL.
+- Press enter to create the clone.
+- Install required packages with the command "pip3 install -r requirements.txt"
+
+# Credits
+## Code
+- 
+
+## Media
+- Icons are from [Font Awesome](https://fontawesome.com)
+- The  fonts are imported from [Google Fonts](https://fonts.google.com)
+
+- Images from 
+  - 
+  - 
+
+## Acknowledgement
+I'd like to thank my mentor...
