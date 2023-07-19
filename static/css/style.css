@@ -81,6 +81,11 @@ a:hover {
     color: rgb(0, 0, 0);
 }
 
+body {
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
 /* Meal Cards */
 
 .meal-card-container {

@@ -10,7 +10,10 @@ from .forms import MealForm
 def index(request):
     if request.user.is_authenticated:
         meal_plan = MyMeals.objects.get_or_create(user=request.user)
-        context = {"meals": Meal.objects.all()}
+        context = {
+            "meals": Meal.objects.all(),
+            "page_title": "Home"
+        }
         return render(request, "home.html", context)
     else:
         return render(request, "index.html")
@@ -21,7 +24,9 @@ def index(request):
 @login_required
 def my_meals(request):
     meal_plan = MyMeals.objects.get_or_create(user=request.user)
-    context = {}
+    context = {
+         "page_title": "My Meals"
+    }
     return render(request, "my_meals.html", context)
 
 
@@ -88,8 +93,13 @@ def edit_meal(request, meal_id):
         return redirect(reverse("admin_panel"))
 
     form = MealForm(instance=meal)
+    context = {
+        "form": form, 
+        "meal_id_context": meal_id, 
+        "page_title": f"Edit Meal - {meal.title}"
+    }
 
-    return render(request, "edit_meal.html", {"form": form, "meal_id_context": meal_id})
+    return render(request, "edit_meal.html", context)
 
 
 # Delete Meal
@@ -145,3 +155,5 @@ def remove_meal_from_plan(request, meal_id):
 def info_dialog(request, meal_id):
     meal = get_object_or_404(Meal, id=meal_id)
     return render(request, "info_dialog.html", {"meal": meal})
+    
+
