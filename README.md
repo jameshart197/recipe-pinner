@@ -58,7 +58,7 @@ The user stories used as part of the planning for the website have been consolid
 
 The navigation bar is featured across all pages.
 
-For unregistered or logged out users of the site, the navbar displays... On large screens, the links are visible on the right hand side of the navbar. The list collapses into a dropdown menu on smaller screens which can be toggled by clicking the bars icon.
+For unregistered or logged out users of the site, the navbar displays Home, Login and Sign Up. The list collapses into a dropdown menu on smaller screens which can be toggled by clicking the bars icon.
 
 For registered users of the site, the navbar displays... 
 
