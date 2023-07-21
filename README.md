@@ -1,6 +1,6 @@
-# AppName
+# MealPin
 
-Application is a web application designed for users to visit and pin recipes that they like. It was inspired by Pinterest and is created to be used either as a dietary aide, a way of sharing recipes and a means of learning new recipes.
+MealPin is a web application designed for users to visit and pin recipes that they like. It was inspired by Pinterest and is created to be used either as a dietary aide, a way of sharing recipes and a means of learning new recipes.
 
 Unregistered users can view a call to action page that encourages them to sign up. Users can sign up for the site from the registration form. They can then subsequently log in using the login button in the navigation bar. 
 
@@ -11,18 +11,19 @@ Creation, Reviewing, Updating and Deleting Meals are controlled from the admin p
 
 ![MealPin](responsive link)
 
-The live site can be found here: [Site](sitelink)
+The live site can be found here: [MealPin](https://recipe-pinner-fe5a291f89dd.herokuapp.com/)
 
 # Table of Contents
-- [User Experience]
-- [Features]
-  - [Feature1]
-  - [Feature2]
-- [Design]
-- [Technologies Used]
-- [Testing]
-- [Deployment]
-- [Credits]
+- [User Experience](#user-experience)
+- [Features](#features)
+  - [General](#general)
+  - [Site Pages](#site-pages)
+  - [Regisration](#accounts)
+- [Design](#design)
+- [Technologies Used](#technologies-used)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
 
 # User Experience
 
@@ -53,80 +54,67 @@ The user stories used as part of the planning for the website have been consolid
 <details>
 <summary>Navbar</summary>
 
-![Navbar]
+![Navbar](readme-docs/site-images/navbar.png)
+![Navbar](readme-docs/site-images/navbar-loggedin.png)
+![Navbar](readme-docs/site-images/admin-navbar.png)
 </details>
 
 The navigation bar is featured across all pages.
 
 For unregistered or logged out users of the site, the navbar displays Home, Login and Sign Up. The list collapses into a dropdown menu on smaller screens which can be toggled by clicking the bars icon.
 
-For registered users of the site, the navbar displays... 
+For registered users of the site, the navbar displays Home, My Meals and Log Out. Administration accounts would also see the "Admin Panel" option. 
 
-The navbar is...(sourced from Bootstrap)
+The navbar is based on the standard bootstrap 5 navbar in dark, with some modifications. 
 
-On the left hand side of the screen, there is the logo which acts as a link to the index page. 
+On the left hand side of the screen, there is the logo which acts as a link to the index page, which renders differently depending on whether the user is logged in or out. 
 
 ### Footer
 
 <details>
 <summary>Footer</summary>
 
-![Footer]
+![Footer](readme-docs/site-images/footer.png)
 </details>
 
-The footer is featured across all pages.
+The footer is featured across all pages. It is a very simple copyright mark on a contrasting white background that is always visible on scroll down. 
 
-The footer features...
+## Site Pages
 
 ### Index Page
 
 <details>
 <summary>Index Page Unregistered</summary>
 
-![Index Page]
+![Index Page](readme-docs/site-images/index.png)
 </details>
 
 <details>
 <summary>Index Page Logged In</summary>
 
-![Index Page]
+![Index Page](readme-docs/site-images/home.png)
 </details>
 
 The index page has two states depending on the user.
 
-For unregistered or logged out users, the index page displays...
+For unregistered or logged out users, the index page displays a hero image giving the user an immediate understanding of the nature of the site (it is a food based image). Within this is a box containing a simple and short message with a Call to Action button encouraging the user to sign up. Users can click this button or the sign up in the navigation bar to do so, or log in using the navbar. 
 
-For users who are registered and logged in, the index page displays...
+For users who are registered and logged in, the index page displays a grid of meal cards, arranged evenly across the page. These meal cards have a title, preparation time, info button, simple dietary information and a pin button. Users can click the pin to "pin" or "unpin" their meals, which changes the icon accordingly. Clicking the info button will expand the information on the meal card using a dialog so that the user can view the details about that meal. 
 
-The index page is responsive in that....
+The index page is responsive in that the number of meal cards per line adjusts for different device sizes. On very large screens, the content is limited to 2000px wide and is centered. 
 
-### Feature2
-
-<details>
-<summary>Feature2</summary>
-
-![Feature2]
-</details>
-
-The Feature2 page is available for... registered/unregistered
-
-The primary purpose of feature2 page...
-
-Feature2 page is responsive in that...
-
-### Feature3
+### My Meals
 
 <details>
-<summary>Feature3</summary>
+<summary>My Meals</summary>
 
-![Feature3]
+![My Meals](readme-docs/site-images/mymeals.png)
 </details>
 
-The Feature3 page is available for... registered/unregistered
+The My Meals page is available for registered and logged in users. The primary purpose of the My Meals page is to display only the pinned meals for that user. This gives the user a way of briefly seeing their saved list of meals, without seeing a full list of them. There is an info button present on the meal which allows them to expand into a dialog for more detailed information. There is also a pin on the meal cards but this will only "unpin" meals, as they are then removed from the user's meal list, and not visible on the My Meals page. 
 
-The primary purpose of Feature3 page...
+The My Meals page is responsive in that the number of meal cards per line adjusts for different device sizes. On very large screens, the content is limited to 2000px wide and is centered. 
 
-Feature3 page is responsive in that...
 
 ## Accounts
 
@@ -135,31 +123,31 @@ Feature3 page is responsive in that...
 <details>
 <summary>Registration Page</summary>
 
-![Registration]
+![Registration](readme-docs/site-images/signup.png)
 </details>
 
-The registration page is accessible through a "Sign Up" link in the navbar or "Register" CTA button on the index page for users who are not logged in. The page features a simple form that requires the users "Email", "First Name", "Last Name", "Password" and "Confirm Password". 
+The registration page is accessible through a "Sign Up" link in the navbar or "Sign Up" CTA button on the index page for users who are not logged in. The page features a simple form that requires the users "Email", "First Name", "Last Name", "Password" and "Confirm Password". 
 
 If the user attempts to register while leaving any of the fields blank, they are prompted to fill in the missing field. If the user attempts to register with an email that is already registered, they are given a message that the email is already in use. If the user attempts to register without the passwords matching, they are given a message that the password fields don't match. 
 
-When the user registers, they are logged in and redirected to the index page where they are informed their account is awaiting approval.
+When the user registers, they are logged in and redirected to the index page where they can now view all meals.
 
 ### Login Page
 
 <details>
 <summary>Login Page</summary>
 
-![Login]
+![Login](readme-docs/site-images/signin.png)
 </details>
 
 The login page is accessible through a "Sign In" link in the navbar. The page features a simple form that requires the user's "Email" and "Password". If the user attempts to submit an empty field, they are prompted to fill in the required field. If the user's credentials are invalid, they are given a message that their login is invalid.
 
-When the user logs in, they are redirected to...
+When the user logs in, they are redirected to the index page where they can now view all meals.
 
-![Logout]
+![Logout](readme-docs/site-images/logout.png)
 </details>
 
-The logout option is accessible through a "Logout" link in the navbar. When the user logs out, they are redirected to...
+The logout option is accessible through a "Logout" link in the navbar. When the user logs out, they are redirected to the index page that displays when the user is logged out, consisting simply of a call to action for signing up and containing a login button on the navbar. 
 
 
 ## Admin Panel
@@ -169,77 +157,96 @@ The logout option is accessible through a "Logout" link in the navbar. When the 
 <details>
 <summary>Admin Panel</summary>
 
-![Admin Panel]
+![Admin Panel](readme-docs/site-images/adminpanel.png)
 </details>
 
-From the admin panel, the admin user is able to create, update and delete...This is done through...
+From the admin panel, the admin user is able to create, update and delete meals. This page displays all meals, and there is a large "Add Meal" button at the top of the page for adding meals. Each meal card contains an edit and delete button, which allows the administrator to execute these actions. When the administrator clicks the "Add Meal" button they are taken to the Create Meal page. When they click the Edit button, they are taken to the Edit Meal page. When they click the Delete Meal button, the meal is deleted and they remain on the Admin page, whilst a message confirms their action. 
+
+### Create Meal
+
+<details>
+<summary>Create Meal</summary>
+
+![Create Meal](readme-docs/site-images/admin-create.png)
+</details>
+
+From the Create Meal page, the admin user is able to create meals. This page consists of a form with the following fields; Title, Meal type, Breakfast, Preptime in minutes, 
+Calories in grams, Protein in grams, Fat in grams, Carbs in grams and Recipe. All fields are required, and the Meal Type uses a drop down menu consisting of all the meal categories on the site. Meal Type and Recipe are prepopulated with a default; Meal Type defaults to Breakfast (the first item on the drop down menu), and recipe defaults to "This recipe has not been added yet!". The recipe option uses Django Summernote to give the administrator a text editing tool for creating the recipe information. 
+
+### Edit Meal
+
+<details>
+<summary>Edit Meal</summary>
+
+![Edit Meal](readme-docs/site-images/admin-edit.png)
+</details>
+
+From the Edit Meal page, the admin user is able to Edit meals. This page consists of a prepopulated form with the following fields; Title, Meal type, Breakfast, Preptime in minutes, Calories in grams, Protein in grams, Fat in grams, Carbs in grams and Recipe. From here, the administrator may edit any of the fields and click save, where they are then redirected back to the admin panel and a message will confirm the successful edit. 
+
+### Delete Meal
+
+<details>
+<summary>Delete Meal</summary>
+
+![Delete Meal](readme-docs/site-images/admin-delete.png)
+</details>
+
+When the administrator clicks the Delete Meal button, the meal is deleted and they remain on the Admin page, whilst a message confirms their action. 
 
 
 ## Future Features
-1. __Stretch One__. This is a description of a stretch goal that provides a new feature
-2. __Stretch Two__. This is a description of a stretch goal that provides a new feature
-3. __Stretch Three__. This is a description of a stretch goal that provides a new feature
+1. __Reordering of Pinned Items__. In the future it could increase functionality if the user's pinned items moved to the top of the Home page. During development, an attempt was made at implementing this functionality, but resulted in duplication of pinned items. As such, the functionality was judged beyond the scope of the current project.
+2. __Pin Transition or Animation__. In the future, having an animation or transition to display that the meal card has been pinned or unpinned would greatly increase the user's experience on the site. However, due to the fact that the Home page is reloaded when a card is pinned or unpinned, this functionality was beyond the means of the developer. 
+3. __View other user's Meal Lists__. In the future having users be able to view other user's "My Meals" lists and see what they have pinned, and potentially even comment on them, could expand the functionality of the site greatly. This feature was determined to be way beyond the scope of the original project and no attempt was made to add this in development.
 
 
 # Design
 
-The concept for ApplicationName was a site for... As such, the aim of the design ...
+The concept for MealPin was a site much like Pinterest where users could pin their meals to save them for later and view large lists of meals. As such, the aim of the design was to keep things clear, legible, intuitive to use and pleasing to the eye. The Index page is designed to capture the user's attention and create understanding of the site's purpose, whereas the logged in pages' design is focused on functionality and accessibility. 
 
 
 ## CRUD Functionality
 
-This describes CRUD functionality for all users that have it.
+Registered users have the ability to add and remove meals from their "My Meals" list using the pin functionality. These can be pinned and unpinned as many times as the user wishes, and will always update immediately. Administrators have the ability to create, view, edit and delete meals at any time. Deleting a meal creates a cascading effect that removes them from all user's My Meal lists and the full meal list. 
 
 
 ## Colour
 ![Colour Palette]
 
-Clarity, Accessibility, Aesthetic
+The site uses a colour palette of primarily black, beige and white to keep a modern feeling and aesthetic whilst giving as much clarity and accessibility as possible. On the administration panel forms, the background switches from black to white to keep the page as simple and clear as possible, where there is far less focus on aesthetic. On the sign up page, a bright and bold image full of colour is included to grab the user's attention and the sign up button is blue to stand out on the page. Also in the Administration Panel, the Create, Edit and Delete buttons are coloured according to functionality as opposed to for visual appeal.  
 
 
 ## Typography
 
-Font Choices detailed here and why
+The site makes extensive use of the sans-serif font family implemented by bootstrap. Despite this being the default, it felt clear, concise and functional for the site, so there was no reason to make any adjustments. In future, changing the font for the word MealPin (the site's name) to make it something more recognizable as a brand could be something to be considered.
 
 
 ## Wireframes
 
-Wireframes were created in Balsamiq. They were used for initial planning of template layouts.
+Wireframes were created in Balsamiq. They were used for initial planning of template layouts. I did not include wireframes for forms, as these are mostly generated using Crispy Forms through bootstrap and making very small edits. 
 
 <details>
 <summary>Index Wireframe</summary>
 
-![Index Wireframe]()
+![Index Wireframe](readme-docs/wireframes/index.png)
 </details>
 
 <details>
-<summary>Feature1 Wireframe</summary>
+<summary>Home Wireframe (index when logged in)</summary>
 
-![Feature1 Wireframe]()
+![Home Wireframe](readme-docs/wireframes/home.png)
 </details>
 
 <details>
-<summary>Feature2 Wireframe</summary>
+<summary>My Meals Wireframe</summary>
 
-![Feature2 Wireframe]()
-</details>
-
-<details>
-<summary>Register Wireframe</summary>
-
-![Register Wireframe]()
-</details>
-
-<details>
-<summary>Login Wireframe</summary>
-
-![Login Wireframe]()
+![My Meals Wireframe](readme-docs/wireframes/my-meals.png)
 </details>
 
 <details>
 <summary>Admin Panel Wireframe</summary>
 
-![Admin Panel Wireframe]()
+![Admin Panel Wireframe](readme-docs/wireframes/admin-panel.png)
 </details>
 
 
@@ -247,7 +254,7 @@ Wireframes were created in Balsamiq. They were used for initial planning of temp
 
 [GitHub Projects Page]()
 
-GitHub Projects was used in part for the planning of this website to create and track User Stories as they were implemented and fulfilled. This section documents sprints and implementation of the plan
+GitHub Projects was used in part for the planning of this website to create and track User Stories as they were implemented and fulfilled. The initial plan for the project was to break these user stories down into a small set of sprints, and each individual sprint would cover an Epic. The Site consists of 6 Epics. One is an overriding Epic, which contains the entire project's scope, purpose and functionality. This is then broken down into the 5 other Epics. These consist of User Interface, Authentication, Database, Pin Functionality and Stretch Goals. Each of these Epics was initially planned to be a single sprint, and each of these Epics can be broken down further into User Stories. These User Stories on the project board each contain a label depicting the epic to which they belong, and a label depicting whether they are MVP (Must Have), Extended Functionality (Should Have) or Stretch Goals (May Have). Due to the fact that the entire project was changed fairly late due to difficulties in implementing the original project, and some of the functionality crossed over, the entire site was made in a single sprint fairly close to the deadline date, thus the project board is not split into sprints.
 
 
 ## Entity Relationship Diagram
@@ -257,7 +264,7 @@ The below Entity Relationship Diagram was created on [diagrams.net](https://www.
 <details>
 <summary>ERD</summary>
 
-![ERD]()
+![ERD](readme-docs/erd/mealpin-erd.png)
 </details>
 
 
@@ -280,6 +287,7 @@ The below Entity Relationship Diagram was created on [diagrams.net](https://www.
 - [Font Awesome](https://fontawesome.com/): to import icons.
 - [Balsamiq](https://balsamiq.com/): to create wireframes.
 - [Diagrams.net](https://www.diagrams.net/): for Entity Relationship Diagram.
+- [Greenshot](https://getgreenshot.org/): for screenshots used in this readme. 
 
 # Testing
 
@@ -393,7 +401,7 @@ Testing for the site can be found at the below link:
   - Heroku will start building the app
 - The link to the app can be found at the top of the page by clicking "Open app"
 
-The live site can be found here: [Application]()
+The live site can be found here: [MealPin](https://recipe-pinner-fe5a291f89dd.herokuapp.com/)
 
 
 ## Steps to clone site:
@@ -406,15 +414,13 @@ The live site can be found here: [Application]()
 
 # Credits
 ## Code
-- 
+- Bootstrap code is often taken/altered from the base provided in the Code Institute Blog walkthrough.
+- Dialog/Modal is based on a tutorial by [Web Dev Simplified](https://www.youtube.com/watch?v=ywtkJkxJsdg)
 
 ## Media
 - Icons are from [Font Awesome](https://fontawesome.com)
-- The  fonts are imported from [Google Fonts](https://fonts.google.com)
+- Images are taken from [Pexels](https://www.pexels.com/)
 
-- Images from 
-  - 
-  - 
 
 ## Acknowledgement
-I'd like to thank my mentor...
+I'd like to thank my mentor Brian Macharia for his extensive help with understanding Django and giving good project feedback. 
