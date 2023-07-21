@@ -31,16 +31,20 @@ The live site can be found here: [Site](sitelink)
 The user stories used as part of the planning for the website have been consolidated here.
 
 - As a Site User I can view the home page so that I can see the site's goal and be encouraged to sign up
-- As a Site User I can log in so that I can gain access to the site's features
 - As a Site User I can register for an account so that I can log in to gain access to the site's features
+- As a Site User I can log in so that I can gain access to the site's features
 - As a Site User I can Log Out so that I can let someone else log in on my computer, leave myself signed out on public spaces or change accounts
-- As a site user I can ... so that ...
-- As a site user I can ... so that ...
-- As a site user I can ... so that ...
-- As a site user I can ... so that ...
+- As a Site User I can view the Home page when logged in so that I can pin meals
+- As a Site User I can view my pinned meals so that I can see what I've saved
+- As a Site User I can Click on the highlighted 'pin' to unpin a meal-card so that it is removed from "My Meals"
+- As a Site User I can Click on the 'pin' to pin a meal-card so that it is added to "My Meals"
+- As a Site User I can Click on the Info button so that I can expand the Meal Card and view the recipe in more detail
+- As a Site User I can unpin meals on the My Meals page so that they are removed from the page, and the page automatically updates
 - As a Site Administrator I can view administrator features so that I can add, edit and remove meal cards to the site
 - As a Site Administrator I can view the meal CRUD Forms so that I can add, edit and remove meals from the site
 - As a Developer I can create a model for the Meal database so that it is available for administrators to add meals
+- As a Developer I can automatically generate a list of a User's pinned meals so that when they go to the "My Meals" page it only displays the meals they have pinned
+- As a Developer I can create a model for the Pinned Meal database for each user so that we can generate a list of pinned meals for each user
 
 # Features
 ## General
