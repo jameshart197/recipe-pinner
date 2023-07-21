@@ -7,6 +7,7 @@ HTML was validated by copying the page source and pasting into the validator.
 
 - <details>
   <summary>Index Results</summary>
+  There are some errors showing in the HTML Checker that should be fixed in future iterations. 
 
     ![Index results](readme-docs/testing/)
   </details>
@@ -48,7 +49,7 @@ HTML was validated by copying the page source and pasting into the validator.
   </details>
 
 - <details>
-  <summary>Admin Create Results</summary>
+  <summary>Admin Edit Results</summary>
 
   ![Admin Edit results](readme-docs/testing/)
   </details>
@@ -63,10 +64,12 @@ CSS was validated by copying the CSS file into the validator. No errors were rep
 - Results for style.css:
   - ![CSS results](readme-docs/testing/)
   - <p>
-        <a href="http://jigsaw.w3.org/css-validator/">
-          <img style="" src="" alt="">
-          </a>
-      </p>
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="https://jigsaw.w3.org/css-validator/images/vcss"
+            alt="Valid CSS!" />
+    </a>
+</p>
 
 
 ## JavaScript Testing
