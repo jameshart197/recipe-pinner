@@ -6,7 +6,6 @@ function closeButton() {
 }
 
 [...openInfoButtons]?.forEach(element => {
-    console.log("I am working");
     element.addEventListener("click", () => {
         const mealId = element.dataset.meal;
         const url = `info/dialog/${mealId}`;
