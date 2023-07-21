@@ -9,7 +9,7 @@ Registered users can view the Home page, which is a grid of "meal cards". A meal
 Creation, Reviewing, Updating and Deleting Meals are controlled from the admin panel, restricting who can create, update and delete meals from the site. The admin user can get to the admin panel in the navigation bar as long as they are logged onto their administration account. Administrators can also pin and unpin meals like regular users. 
 
 
-![MealPin](responsive link)
+![MealPin](readme-docs/site-images/responsive-mockup.png)
 
 The live site can be found here: [MealPin](https://recipe-pinner-fe5a291f89dd.herokuapp.com/)
 
@@ -211,7 +211,7 @@ Registered users have the ability to add and remove meals from their "My Meals" 
 
 
 ## Colour
-![Colour Palette]
+![Colour Palette](readme-docs/site-images/color-palette.png)
 
 The site uses a colour palette of primarily black, beige and white to keep a modern feeling and aesthetic whilst giving as much clarity and accessibility as possible. On the administration panel forms, the background switches from black to white to keep the page as simple and clear as possible, where there is far less focus on aesthetic. On the sign up page, a bright and bold image full of colour is included to grab the user's attention and the sign up button is blue to stand out on the page. Also in the Administration Panel, the Create, Edit and Delete buttons are coloured according to functionality as opposed to for visual appeal.  
 
